@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/HeaderNavbar/index.tsx",
+    "components/DexSwapList/Cronus/index.js",
+    "components/DexSwapList/Cronus/Token/TokenTable/TableFooter/index.js",
+    "components/DexSwapList/Diffuison/Overview/index.js",
+    "components/DexSwapList/Diffuison/Overview/index.js",
+    "components/index.js",
+    "components/EmvosOverview/index.js",
+    "components/UnstoppableLogin/index.js",
+    "components/WelocmePage/index.js",
+    "pages/index.js"
+  ],
+  "exclude": ["node_modules"]
+}
