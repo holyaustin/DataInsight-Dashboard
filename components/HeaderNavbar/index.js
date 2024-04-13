@@ -136,7 +136,7 @@ export default function HeaderNavbar() {
                 </Button>
               </Link>
               <Link
-                href="/evmoswap"
+                href="/uniswap"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button variant="subtle" color="white" radius="md" h={50}>
@@ -146,9 +146,9 @@ export default function HeaderNavbar() {
                     mx={3}
                     color="white"
                     alt="diffusion"
-                    src="https://assets.coingecko.com/coins/images/25800/small/logox200.png?1653970616"
+                    src="https://assets.coingecko.com/coins/images/12504/standard/uni.jpg?1696512319"
                   />
-                  EvmoSwap
+                  UniSwap
                 </Button>
               </Link>
             </Group>
@@ -190,8 +190,8 @@ export default function HeaderNavbar() {
             <Link href="/cronus" className={classes.link}>
               Cronus Finance
             </Link>
-            <Link href="/evmoswap" className={classes.link}>
-              EvmoSwap
+            <Link href="/uniswap" className={classes.link}>
+              Uniswap
             </Link>
 
             <Divider

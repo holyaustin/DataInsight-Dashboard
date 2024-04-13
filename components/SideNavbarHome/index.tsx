@@ -66,32 +66,32 @@ export default function SideNavbarHome() {
       <Navbar width={{ base: 80 }} p="md">
         <Navbar.Section grow mt={5}>
           <Stack justify="center" spacing={10} my="auto">
-            <Tooltip label="Evmos.org" position="right" transitionDuration={0}>
+            <Tooltip label="optimism.io" position="right" transitionDuration={0}>
               <Button
                 component="a"
                 target="_blank"
-                href="https://evmos.org/"
+                href="https://www.optimism.io/"
                 color="gray"
                 className={cx(classes.link, { [classes.active]: active })}
               >
                 <IconChartDots />
               </Button>
             </Tooltip>
-            <Tooltip label="Evmos App" position="right" transitionDuration={0}>
+            <Tooltip label="Optimism Bridge" position="right" transitionDuration={0}>
               <Button
                 component="a"
                 target="_blank"
-                href="https://app.evmos.org/"
+                href="https://app.optimism.io/bridge/deposit"
                 className={cx(classes.link, { [classes.active]: active })}
               >
                 <IconGauge />
               </Button>
             </Tooltip>
-            <Tooltip label="Evmso Doc" position="right" transitionDuration={0}>
+            <Tooltip label="Optmism Doc" position="right" transitionDuration={0}>
               <Button
                 component="a"
                 target="_blank"
-                href="https://docs.evmos.org/"
+                href="https://docs.optimism.io/"
                 className={cx(classes.link, { [classes.active]: active })}
               >
                 <IconBook2 />

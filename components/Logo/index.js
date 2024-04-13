@@ -8,7 +8,7 @@ export default function Logo() {
       <Link href="/evmos">
         <Image
           pb={2}
-          src="/eddalytics-logo11.png"
+          src="/datalogo2.png"
           alt="gigiblock-logo"
           width="12vw"
           height="calc(7vw*0.3)"

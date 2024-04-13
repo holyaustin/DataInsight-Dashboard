@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EddAlytics - Emvos Dex Dashboard Analytics</title>
-        <meta name="description" content="Emvos Dex Dashboard Analytics" />
+        <title>DataInsight - Optimism Dex Dashboard Analytics</title>
+        <meta name="description" content="Optimism Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppShell
@@ -32,7 +32,7 @@ export default function Home() {
         })}
       >
         <UnstoppableLogin />
-        <EmvosOverview />
+        <OptimismOverview />
       </AppShell>
     </>
   );
