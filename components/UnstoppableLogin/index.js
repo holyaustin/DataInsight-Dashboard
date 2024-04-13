@@ -13,7 +13,7 @@ import LoaderComp from "../LoaderComp";
 
 const uauth = new UAuth({
   clientID: process.env.NEXT_PUBLIC_UNSTOPPABLEDOMAIN_CLIENT_ID,
-  redirectUri: "https://www.eddalytics.xyz/",
+  redirectUri: "https://data-insight-dashboard.vercel.app/",
   scope: "openid wallet ",
 });
 

@@ -3,7 +3,7 @@ import Head from "next/head";
 import { AppShell } from "@mantine/core";
 
 import {
-  EmvosOverview,
+  OptimismOverview,
   Footer,
   HeaderNavbar,
   SideNavbarHome,

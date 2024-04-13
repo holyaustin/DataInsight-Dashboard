@@ -15,7 +15,7 @@ import {
 import { IconX } from "@tabler/icons";
 
 import {
-  EmvosOverview,
+  OptimismOverview,
   Footer,
   HeaderNavbar,
   LoaderComp,
@@ -27,7 +27,7 @@ import Link from "next/link";
 
 const uauth = new UAuth({
   clientID: process.env.NEXT_PUBLIC_UNSTOPPABLEDOMAIN_CLIENT_ID,
-  redirectUri: "https://www.eddalytics.xyz/",
+  redirectUri: "https://data-insight-dashboard.vercel.app/",
   scope: "openid wallet ",
 });
 
@@ -63,6 +63,7 @@ const useStyles = createStyles((theme) => ({
   description: {
     marginTop: theme.spacing.xl,
     fontSize: 24,
+    textAlign: "center",
 
     [BREAKPOINT]: {
       fontSize: 18,
@@ -159,8 +160,8 @@ export default function Home() {
     return (
       <>
         <Head>
-          <title>EddAlytics - Emvos Dex Dashboard Analytics</title>
-          <meta name="description" content="Emvos Dex Dashboard Analytics" />
+          <title>DataInsight - Optimism Dex Dashboard Analytics</title>
+          <meta name="description" content="Optimism Dex Dashboard Analytics" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <AppShell
@@ -208,7 +209,7 @@ export default function Home() {
               {getEllipsisTxt(user.wallet_address)}
             </Button>
           </Group>
-          <EmvosOverview />
+          <OptimismOverview />
         </AppShell>
       </>
     );
@@ -217,11 +218,11 @@ export default function Home() {
   return (
     <Container h="100hv" className={classes.inner}>
       <Center>
-        <Box my={20}>
-          <Link href="www.eddalytics.xyz">
+        <Box my={1}>
+          <Link href="https://data-insight-dashboard.vercel.app/">
             <Image
               pb={2}
-              src="/eddalytics-logo6.png"
+              src="/datalogo.png"
               alt="gigiblock-logo"
               width="100%"
               height="100%"
@@ -231,21 +232,26 @@ export default function Home() {
       </Center>
 
       <h1 className={classes.title}>
-        A{" "}
+        {" "}
+        <Center>
         <Text
           component="span"
           variant="gradient"
-          gradient={{ from: "blue", to: "orange" }}
+          gradient={{ from: "green", to: "red" }}
           inherit
         >
-          DEX Visual Analytics
-        </Text>{" "}
-        <Center>dashboard site</Center>
+          DataInsight Dashboard
+          </Text>{" "}
+        </Center>
+      
+        <Center>A Visual Analytics for</Center>
       </h1>
+   
+      <Center><h1>Decentralized Exchanges (DEXes)</h1></Center>
 
       <Text className={classes.description} color="dimmed">
         Providing a visual analytics front-end with detailed data about Dex’s
-        performance and health on the Evmos Mainnet.
+        performance and health on the Optimism Mainnet.
       </Text>
 
       <Center>
@@ -261,7 +267,7 @@ export default function Home() {
             Login UNS Domain
           </Button>
           <Link
-            href="/evmos"
+            href="/optimism"
             style={{ color: "inherit", textDecoration: "inherit" }}
           >
             <Button radius="md" size="md" variant="default">

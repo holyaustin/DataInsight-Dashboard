@@ -1,8 +1,8 @@
-# Evmos Covalent #OneMillionWallets Hackathon
+# Data-Insight-dashboard (Optimism Analytics)
 
 <h1 align="center">
    <b>
-        <a href="https://www.eddalytics.xyz/"><img src="https://github.com/SabeloMkhwanzi/evmos-defi-dashlytics/blob/main/public/eddalytics-logo4.png" /></a><br>
+        <a href="https://www.eddalytics.xyz/"><img src="https://github.com/SabeloMkhwanzi/evmos-defi-dashlytics/blobdata-insight-dashboard/main/public/eddalytics-logo4.png" /></a><br>
     </b>
 </h1>
 
@@ -267,6 +267,5 @@ export default function EvmoswapTransactions() {
 
 #### Demo video: [video](https://youtu.be/2uNcdUntzZA)
 
-#### Project Start: Date: Nov 07, 2022 - Dec 4, 2022
+https://data-insight-dashboard.vercel.app/
 
-Happy Hacking 😊

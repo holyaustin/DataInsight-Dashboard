@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import EvmosStatsOverview from "./EvmosStatsOverview";
+import EvmosStatsOverview from "./OptimismStatsOverview";
 import { Center, Notification } from "@mantine/core";
 import { IconX } from "@tabler/icons";
 import LoaderComp from "../../LoaderComp";

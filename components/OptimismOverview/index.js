@@ -6,7 +6,7 @@ import PriceChart from "./PriceChart";
 import { SimpleGrid, Center, Notification, Text } from "@mantine/core";
 import { Flex } from "@chakra-ui/react";
 import TokenPair from "./TokenPair";
-import EvmosStats from "./EvmosStats";
+import EvmosStats from "./OptimismStats";
 import { IconX } from "@tabler/icons";
 import LoaderComp from "../LoaderComp";
 
