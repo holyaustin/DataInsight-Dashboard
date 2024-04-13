@@ -6,32 +6,32 @@ import PriceChart from "./PriceChart";
 import { SimpleGrid, Center, Notification, Text } from "@mantine/core";
 import { Flex } from "@chakra-ui/react";
 import TokenPair from "./TokenPair";
-import EvmosStats from "./OptimismStats";
+import OptimismStats from "./OptimismStats";
 import { IconX } from "@tabler/icons";
 import LoaderComp from "../LoaderComp";
 
-export default function EmvosOverview() {
+export default function OptimismOverview() {
   // used React-Query to fetch Covalent API
   const { data, error, isFetching } = useQuery(["ecosystem"], async () => {
     const res = await fetch(
-      "https://api.coingecko.com/api/v3/coins/evmos/market_chart?vs_currency=usd&days=183&interval=daily"
+      "https://api.coingecko.com/api/v3/coins/optimism/market_chart?vs_currency=usd&days=183&interval=daily"
     );
     return res.json();
   });
 
-  // Chart data for Evmos market_caps
+  // Chart data for Optimism market_caps
   const marketCap = data?.market_caps.map((item) => ({
     x: moment(item[0]).format("MMM Do"),
     MarketCap: item[1],
   }));
 
-  // Chart data for Evmos Total Volumes ==> not applied
+  // Chart data for Optimism Total Volumes ==> not applied
   // const totalVolumes = data?.total_volumes.map((item) => ({
   //   x: moment(item[0]).format("MMM Do"),
   //   Volumes: item[1],
   // }));
 
-  // Chart data for Evmos price
+  // Chart data for Optimism price
   const prices = data?.prices.map((item) => ({
     x: moment(item[0]).format("MMM Do"),
     Price: item[1],
@@ -62,7 +62,7 @@ export default function EmvosOverview() {
   return (
     <>
       <Text c="dimmed" fz="xl" tt="uppercase">
-        Evmos Analytics
+        Optimism Analytics
       </Text>
       <Flex justifyContent="space-evenly">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
@@ -70,7 +70,7 @@ export default function EmvosOverview() {
           <MarketcapChart marketCap={marketCap} />
         </SimpleGrid>
       </Flex>
-      <EvmosStats />
+      <OptimismStats />
       <TokenPair />
     </>
   );

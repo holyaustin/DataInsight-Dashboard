@@ -12,7 +12,7 @@ export default function Diffusion() {
   return (
     <>
       <Head>
-        <title>Diffusion Analytics - EddAlytics</title>
+        <title>DataInsight - Diffusion Dashboard Analytics</title>
         <meta name="description" content="Emvos Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -30,7 +30,7 @@ export default function Diffusion() {
           },
         })}
       >
-        <UnstoppableLogin />
+
         <Diffuison />
       </AppShell>
     </>

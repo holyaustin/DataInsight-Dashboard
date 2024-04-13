@@ -7,7 +7,7 @@ import moment from "moment";
 
 // Covalent API Key
 const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
-
+console.log("covalent key is", APIKey)
 export default function ChainStatus() {
   // used React-Query to fetch Covalent API
   const { data, error, isFetching } = useQuery(["chainStatus"], async () => {
@@ -20,7 +20,7 @@ export default function ChainStatus() {
   const chainStatus = data?.data?.items[25].synced_block_height;
   const blockedSignedAt = data?.data?.items[25].synced_blocked_signed_at;
 
-  if (isFetching) return (<Center><Loader size="xs" color="green" variant="oval" /></Center>);
+  if (isFetching) return (<Center><Loader size="xs" color="red" variant="oval" /></Center>);
 
   if (error)
     return (

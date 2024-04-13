@@ -67,7 +67,7 @@ export default function Footer({ links }: FooterCenteredProps) {
             radius="xl"
             component="a"
             target="_blank"
-            href="https://github.com/SabeloMkhwanzi/evmos-defi-dashlytics"
+            href="https://github.com/holyaustin/DataInsight-Dashboard"
           >
             <IconBrandGithub size={18} stroke={1.5} />
           </ActionIcon>
@@ -77,7 +77,7 @@ export default function Footer({ links }: FooterCenteredProps) {
             radius="xl"
             component="a"
             target="_blank"
-            href="https://twitter.com/eddalytic"
+            href="https://twitter.com/holyaustin"
           >
             <IconBrandTwitter size={18} stroke={1.5} />
           </ActionIcon>

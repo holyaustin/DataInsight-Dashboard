@@ -1,3 +1,6 @@
+//Optimism Contract address 
+export const OptimismContractAddress = "0x4200000000000000000000000000000000000042";
+
 //Evmos Contract address 
 export const evmosContractAddress = "0x181c262b973b22c307c646a67f64b76410d19b6b";
 

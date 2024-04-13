@@ -64,7 +64,7 @@ export default function SideNavbarDiffusion() {
           <Stack justify="center" spacing={10} my="auto">
             <Tooltip label="Home" position="right" transitionDuration={0}>
               <Link
-                href="/evmos"
+                href="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button

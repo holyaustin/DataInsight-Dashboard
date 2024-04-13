@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmosStatsOverview({ data }) {
+export default function OptimismStatsOverview({ data }) {
   const { classes } = useStyles();
 
   const DiffIcon =
@@ -110,8 +110,8 @@ export default function EvmosStatsOverview({ data }) {
                   radius="md"
                   src={data.image.small}
                   target="_blank"
-                  href="http://evmos.org/"
-                  alt="evmos-logo"
+                  href="http://optimism.io/"
+                  alt="Optimism-logo"
                 />
                 <Text fon fw={700}>
                   {data.name}
@@ -209,7 +209,7 @@ export default function EvmosStatsOverview({ data }) {
               <Button
                 radius="lg"
                 component="a"
-                href="http://evmos.org/"
+                href="http://optimism.io/"
                 variant="subtle"
                 color="violet"
                 compact
@@ -219,7 +219,7 @@ export default function EvmosStatsOverview({ data }) {
               </Button>
               <Space h="md" />
               <Group spacing="xs">
-                <Text>{getEllipsisTxt(data.platforms.evmos)}</Text>
+                <Text>{getEllipsisTxt(data.platforms.optimism)}</Text>
                 <Copy />
               </Group>
             </Box>

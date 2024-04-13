@@ -1,14 +1,14 @@
 import Head from "next/head";
 import { AppShell } from "@mantine/core";
 import { Footer, HeaderNavbar, UnstoppableLogin } from "../components";
-import SideNavbarEvmoswap from "../components/SideNavbarEvmos";
+import SideNavbarEvmoswap from "../components/SideNavbarUniswap";
 import EvmoswapOverview from "../components/DexSwapList/Evmoswap";
 
 export default function Evmoswap() {
   return (
     <>
       <Head>
-        <title>Evmoswap Analytics - EddAlytics</title>
+        <title>DataInsight - Uniswap Dashboard Analytics</title>
         <meta name="description" content="Emvos Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -26,7 +26,7 @@ export default function Evmoswap() {
           },
         })}
       >
-        <UnstoppableLogin />
+      
         <EvmoswapOverview />
       </AppShell>
     </>

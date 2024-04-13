@@ -26,7 +26,7 @@ export default function CronusOverview() {
 
   //console.log(data);
 
-  // Chart data for Evmos market_caps
+  // Chart data for Cronus market_caps
   const marketCap = data?.market_caps.map((item) => ({
     x: moment(item[0]).format("MMM Do"),
     MarketCap: item[1],

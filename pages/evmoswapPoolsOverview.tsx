@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { AppShell } from "@mantine/core";
 import { EvmoswapPoolsOverview, Footer, HeaderNavbar } from "../components";
-import SideNavbarEvmoswap from "../components/SideNavbarEvmos";
+import SideNavbarEvmoswap from "../components/SideNavbarUniswap";
 
 export default function Evmoswap() {
   return (

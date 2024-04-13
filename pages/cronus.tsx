@@ -13,7 +13,7 @@ export default function CronusPage() {
   return (
     <>
       <Head>
-        <title>Cronus-Finance Analytics - EddAlytics</title>
+        <title>DataInsight - Cronus Dashboard Analytics</title>
         <meta name="description" content="Emvos Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -31,7 +31,7 @@ export default function CronusPage() {
           },
         })}
       >
-        <UnstoppableLogin />
+
         <Cronus />
       </AppShell>
     </>

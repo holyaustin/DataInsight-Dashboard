@@ -17,7 +17,7 @@
 Providing a visual analytics front-end with rich information about the health and performance of Dex on Evmos ecosystem - Powered by Evmos x Covalent. 
 
 ### Intro
-- Web3 has changed the way we can interact with money by introducing decentralized finance (DEFI). Decentralized finance provides users with a range of financial services similar to traditional financial industries such as banking, loaning, insurance, and trading without the need to rely on centralized entities. DEX (decentralized exchange) is one of the popular financial services emerging on the web3 ecosystem, a DEX is an exchange where users trade directly from their own wallets, where you can pay money from one currency to buy money for another.  
+- Web3 has revolutionized monetary interactions through decentralized finance (DeFi), offering users various financial services akin to traditional banking, lending, insurance, and trading, without central authority reliance. Among these, decentralized exchanges (DEX) stand out, enabling direct wallet-to-wallet trades, facilitating currency exchange seamlessly.  
 
 - DEX uses Automated Market Makers (AMMs), that allows users to swap tokens on DEX, by paying money from one currency to buy money for another eg. using US dollars stable coin (USDC) to buy Ethereum tokens (ETH). AMMs are protocols for DEXs that help give you the price between these two assets when you swap tokens. AMMs usually rely on a mathematical formula to price assets. Currently, there are different formulas that AMMs use however, the most fundamental and most well-known formula is the XY=K equation. XY=K is an equation you use for determining how much of one token, called X, is needed to swap for another token, called Y, in any DEX.
 

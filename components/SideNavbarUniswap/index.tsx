@@ -52,7 +52,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function SideNavbarEvmoswap() {
+export default function SideNavbarUniswap() {
   const [active, setActive] = useState(2);
   const { classes, cx } = useStyles();
 
@@ -63,7 +63,7 @@ export default function SideNavbarEvmoswap() {
           <Stack justify="center" spacing={10} my="auto">
             <Tooltip label="Home" position="right" transitionDuration={0}>
               <Link
-                href="/evmos"
+                href="/uniswap"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button
@@ -77,7 +77,7 @@ export default function SideNavbarEvmoswap() {
 
             <Tooltip label="Analytics" position="right" transitionDuration={0}>
               <Link
-                href="/evmoswap"
+                href="/uniswap"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button
@@ -90,7 +90,7 @@ export default function SideNavbarEvmoswap() {
 
             <Tooltip label="Pairs" position="right" transitionDuration={0}>
               <Link
-                href="/evmoswapPoolsOverview"
+                href="/uniswapPoolsOverview"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button
@@ -103,7 +103,7 @@ export default function SideNavbarEvmoswap() {
 
             <Tooltip label="Tokens" position="right" transitionDuration={0}>
               <Link
-                href="evmoswapTokensOverview"
+                href="uniswapTokensOverview"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button
@@ -115,14 +115,14 @@ export default function SideNavbarEvmoswap() {
             </Tooltip>
 
             <Tooltip
-              label="evmoswap Dex"
+              label="uniswap Dex"
               position="right"
               transitionDuration={0}
             >
               <Button
                 component="a"
                 target="_blank"
-                href="https://app.evmoswap.org/swap "
+                href="https://app.uniswap.org/"
                 className={cx(classes.link, { [classes.active]: active })}
               >
                 <IconExchange />
