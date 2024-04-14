@@ -1,29 +1,32 @@
 import { Box } from "@chakra-ui/react";
-import { Center, Notification, Text } from "@mantine/core";
-import EvmoswapTokenTable from "./EvmoswapTokenTable";
+import {  Center, Notification, Text } from "@mantine/core";
+import UniswapTransactionsTable from "./UniswapTransactionsTable";
 import { IconX } from "@tabler/icons";
 import { useQuery } from "react-query";
 import LoaderComp from "../../../LoaderComp";
 
-//COVALENT API Key
+//API Key
 const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
 
-export default function EvmoswapTokens() {
+export default function UniswapTransactions() {
   // used React-Query to fetch Covalent API
-  const { data, error, isFetching } = useQuery(["evmoswapTokens"], async () => {
-    const res = await fetch(
-      `https://api.covalenthq.com/v1/9001/xy=k/evmoswap/tokens/?key=${APIKey}`
-    );
-    return res.json();
-  });
+  const { data, error, isFetching } = useQuery(
+    ["uniswapTransactions"],
+    async () => {
+      const res = await fetch(
+        `https://api.covalenthq.com/v1/10/xy=k/uniswap/tokens/address/0x181c262b973b22c307c646a67f64b76410d19b6b/transactions/?key=${APIKey}`
+      );
+      return res.json();
+    }
+  );
 
   const items = data?.data?.items;
 
-  //console.log(items2);
+  //console.log(items.slice(0).reverse());
 
   if (isFetching)
     return (
-      <LoaderComp />
+   <LoaderComp />
     );
 
   if (error)
@@ -38,7 +41,7 @@ export default function EvmoswapTokens() {
         }}
       >
         <Notification icon={<IconX size={18} />} color="red">
-          Error! Failed to Fetch Evmoswap Tokens API
+          Error! Failed to Fetch Cronus Transactions API
         </Notification>
       </Center>
     );
@@ -46,8 +49,8 @@ export default function EvmoswapTokens() {
   return (
     <Box>
       <Box minWidth="1220" maxW="600" justifyItems="center" mx="auto" mb={20}>
-        <Text fw={500}>Top Tokens</Text>
-        <EvmoswapTokenTable data={items} />
+        <Text fw={500}>Transactions</Text>
+        <UniswapTransactionsTable data={items} />
       </Box>
     </Box>
   );

@@ -6,10 +6,8 @@ import {
   Center,
   Paper,
   ScrollArea,
-  Space,
-  Tooltip,
+  TextInput,
 } from "@mantine/core";
-import moment from "moment";
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -70,78 +68,25 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmoswapTransactionsTable({ data }) {
+export default function UniswapTokenTable({ data }) {
   const [scrolled, setScrolled] = useState(false);
   const { classes, cx } = useStyles();
-
-  const getEllipsisTxt = (str, n = 4) => {
-    if (str) {
-      return `${str.slice(0, n)}...${str.slice(str.length - n)}`;
-    }
-    return "";
-  };
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   });
 
-  const rows = data
-    .slice(0)
-    .reverse()
-    .map((index) => (
-      <tr key={index.chain_id}>
-        <td>
-          <div style={{ display: "flex" }}>
-            <Text fw="bold" color="cyan.9" fz="md">
-              {index.act}
-            </Text>
-            <Space w="xs" />
-            <Text>{index.token_0.contract_ticker_symbol}</Text>
-            <Space w="xs" />
-            <Text>for</Text>
-            <Space w="xs" />
-            <Text>{index.token_1.contract_ticker_symbol}</Text>
-          </div>
-        </td>
-        <td>
-          <Text fw="bold" color="green.9" fz="md">
-            {formatter.format(index.total_quote)}
-          </Text>
-        </td>
-        <td>
-          <div style={{ display: "flex" }}>
-            <Text>{formatter.format(index.token_0_quote_rate)}</Text>
-            <Space w="xs" />
-            <Text>{index.token_0.contract_ticker_symbol}</Text>
-          </div>
-        </td>
-
-        <td>
-          <div style={{ display: "flex" }}>
-            <Text>{formatter.format(index.token_1_quote_rate)}</Text>
-            <Space w="xs" />
-            <Text>{index.token_1.contract_ticker_symbol}</Text>
-          </div>
-        </td>
-
-        <td>
-          <Tooltip label="Evmos Scan">
-            <Text
-              color="blue"
-              fw="bold"
-              component="a"
-              target="_blank"
-              variant="subtle"
-              href={`https://evm.evmos.org/address/${index.sender_address}`}
-            >
-              {getEllipsisTxt(index.sender_address)}
-            </Text>
-          </Tooltip>
-        </td>
-        <td>{moment(index.block_signed_at).startOf("hours").fromNow()}</td>
-      </tr>
-    ));
+  const rows = data.map((index) => (
+    <tr key={index.chain_name}>
+      <td>{index.contract_name}</td>
+      <td>{index.contract_ticker_symbol}</td>
+      <td>{formatter.format(index.total_liquidity_quote)}</td>
+      <td>{formatter.format(index.total_volume_24h_quote)}</td>
+      <td>{formatter.format(index.quote_rate)}</td>
+      <td>{index.swap_count_24h}</td>
+    </tr>
+  ));
 
   return (
     <>
@@ -151,6 +96,7 @@ export default function EvmoswapTransactionsTable({ data }) {
             sx={{ height: 400 }}
             onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
           >
+            <TextInput placeholder="Search by Ticker name" mb="md" />
             <Table
               highlightOnHover
               horizontalSpacing="xl"
@@ -163,32 +109,32 @@ export default function EvmoswapTransactionsTable({ data }) {
                 <tr c="dimmed" fw={700} tt="uppercase">
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Act Types
+                      Name
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Total Value
+                      Symbol
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Token Amount
+                      Liquidity Quote
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Token Amount
+                      Volume Quote (24h)
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Account
+                      Price
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Time
+                      Swap Count (24h)
                     </Text>
                   </th>
                 </tr>

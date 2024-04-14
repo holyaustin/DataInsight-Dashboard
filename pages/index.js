@@ -256,21 +256,12 @@ export default function Home() {
 
       <Center>
         <Group className={classes.controls}>
-          <Button
-            ml={2}
-            bg="#0D67FE"
-            radius="md"
-            size="md"
-            onClick={handleLogin}
-          >
-            <Image alt="ud-logo" src="/ud-logo.svg" px={1} />
-            Login UNS Domain
-          </Button>
+         
           <Link
             href="/optimism"
             style={{ color: "inherit", textDecoration: "inherit" }}
           >
-            <Button radius="md" size="md" variant="default">
+            <Button bg="#0D67FE" radius="md" size="md" variant="default">
               Click to Continue
             </Button>
           </Link>

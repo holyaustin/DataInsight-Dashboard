@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmosStatsOverview({ data }) {
+export default function CronusStatsOverview({ data }) {
   const { classes } = useStyles();
 
   const DiffIcon =
@@ -110,7 +110,7 @@ export default function EvmosStatsOverview({ data }) {
                   radius="xl"
                   src={data.image.small}
                   target="_blank"
-                  href="https://medium.com/@cronusfinance"
+                  href="https://medium.com/@sushi"
                   alt="Cronus-Finance-logo"
                 />
                 <Text fon fw={700}>
@@ -221,7 +221,7 @@ export default function EvmosStatsOverview({ data }) {
               <Button
                 radius="lg"
                 component="a"
-                href="https://medium.com/@cronusfinance"
+                href="https://medium.com/@sushi"
                 variant="subtle"
                 color="violet"
                 compact

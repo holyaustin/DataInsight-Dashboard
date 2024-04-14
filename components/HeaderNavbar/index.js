@@ -120,7 +120,7 @@ export default function HeaderNavbar() {
                 </Button>
               </Link>
               <Link
-                href="/cronus"
+                href="/sushi"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button variant="subtle" color="white" radius="md" h={50}>
@@ -130,9 +130,9 @@ export default function HeaderNavbar() {
                     mx={3}
                     color="white"
                     alt="diffusion"
-                    src="https://assets.coingecko.com/coins/images/24022/small/h8GHzr2W_400x400.jpg?1646096205"
+                    src="https://assets.coingecko.com/markets/images/1203/large/lFs3rTxB_400x400.png?1706865213"
                   />
-                  Cronus Finance
+                  SushiSwap
                 </Button>
               </Link>
               <Link
@@ -187,11 +187,11 @@ export default function HeaderNavbar() {
             <Link component="a" href="/diffusion" className={classes.link}>
               Diffusion
             </Link>
-            <Link href="/cronus" className={classes.link}>
-              Cronus Finance
+            <Link href="/sushi" className={classes.link}>
+              SushiSwap
             </Link>
             <Link href="/uniswap" className={classes.link}>
-              Uniswap
+              UniSwap
             </Link>
 
             <Divider

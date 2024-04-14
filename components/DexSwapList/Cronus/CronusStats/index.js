@@ -10,7 +10,7 @@ export default function CronusStats() {
   const { data, error, isFetching } = useQuery(["cronusStats"], async () => {
     const res = await fetch(
       // coingecko API for Market Stats
-      "https://api.coingecko.com/api/v3/coins/cronus-finance?tickers=true&market_data=true&community_data=true&developer_data=false&sparkline=false"
+      "https://api.coingecko.com/api/v3/coins/sushi?tickers=true&market_data=true&community_data=true&developer_data=false&sparkline=false"
     );
     return res.json();
   });

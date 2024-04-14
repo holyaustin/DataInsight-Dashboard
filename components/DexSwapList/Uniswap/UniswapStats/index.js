@@ -1,16 +1,16 @@
 import React from "react";
 import { useQuery } from "react-query";
-import EvmoswapStatsOverview from "./EvmoswapStatsOverview";
+import UniswapStatsOverview from "./UniswapStatsOverview";
 import {  Center, Notification } from "@mantine/core";
 import { IconX } from "@tabler/icons";
 import LoaderComp from "../../../LoaderComp";
 
-export default function EvmoswapStats() {
+export default function UniswapStats() {
   // used React-Query to fetch Covalent API
-  const { data, error, isFetching } = useQuery(["evmoswapStats"], async () => {
+  const { data, error, isFetching } = useQuery(["uniswapStats"], async () => {
     const res = await fetch(
       // coingecko API for Market Stats
-      "https://api.coingecko.com/api/v3/coins/evmoswap?tickers=true&market_data=true&community_data=true&developer_data=false&sparkline=false"
+      "https://api.coingecko.com/api/v3/coins/uniswap?tickers=true&market_data=true&community_data=true&developer_data=false&sparkline=false"
     );
     return res.json();
   });
@@ -38,7 +38,7 @@ export default function EvmoswapStats() {
     );
   return (
     <>
-      <EvmoswapStatsOverview data={data} />
+      <UniswapStatsOverview data={data} />
     </>
   );
 }

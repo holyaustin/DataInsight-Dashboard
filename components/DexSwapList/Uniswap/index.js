@@ -4,41 +4,41 @@ import { Flex } from "@chakra-ui/react";
 import { IconX } from "@tabler/icons";
 import { useQuery } from "react-query";
 import moment from "moment";
-import EvmoswapLiquidityChart from "./EvmoswapLiquidityChart";
-import EvmoswapVolumeChart from "./EvmoswapVolumeChart";
-import EvmoswapStats from "./EvmoswapStats";
-import EvmoswapTransactions from "./EvmoswapTransactions";
-import EvmoswapPools from "./EvmoswapPools";
-import EvmoswapTokens from "./EvmoswapTokens";
+import UniswapLiquidityChart from "./UniswapLiquidityChart";
+import UniswapVolumeChart from "./UniswapVolumeChart";
+import UniswapStats from "./UniswapStats";
+import UniswapTransactions from "./UniswapTransactions";
+import UniswapPools from "./UniswapPools";
+import UniswapTokens from "./UniswapTokens";
 import LoaderComp from "../../LoaderComp";
 
 //COVALENT API Key
 const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
 
-export default function EvmoswapOverview() {
+export default function UniswapOverview() {
   // used React-Query to fetch Covalent API
-  const { data, error, isFetching } = useQuery(["evmoswapEco"], async () => {
+  const { data, error, isFetching } = useQuery(["uniswapEco"], async () => {
     const res = await fetch(
-      "https://api.coingecko.com/api/v3/coins/evmoswap/market_chart?vs_currency=usd&days=183&interval=daily"
+      "https://api.coingecko.com/api/v3/coins/uniswap/market_chart?vs_currency=usd&days=183&interval=daily"
     );
     return res.json();
   });
 
   //console.log(data);
 
-  // Chart data for Evmos market_caps
+  // Chart data for Uniswap market_caps
   const marketCap = data?.market_caps.map((item) => ({
     x: moment(item[0]).format("MMM Do"),
     MarketCap: item[1],
   }));
 
-  // Chart data for Evmos Total Volumes ==> not applied
+  // Chart data for Uniswap Total Volumes ==> not applied
   // const totalVolumes = data?.total_volumes.map((item) => ({
   //   x: moment(item[0]).format("MMM Do"),
   //   Volumes: item[1],
   // }));
 
-  // Chart data for Evmos price
+  // Chart data for Uniswap price
   const prices = data?.prices.map((item) => ({
     x: moment(item[0]).format("MMM Do"),
     Price: item[1],
@@ -66,18 +66,23 @@ export default function EvmoswapOverview() {
   return (
     <>
       <Text c="dimmed" fz="xl" tt="uppercase">
-        Evmoswap Analytics
+        Uniswap Analytics
       </Text>
       <Flex justifyContent="space-evenly">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-          <EvmoswapVolumeChart prices={prices} />
-          <EvmoswapLiquidityChart marketCap={marketCap} />
+          <UniswapVolumeChart prices={prices} />
+          <UniswapLiquidityChart marketCap={marketCap} />
         </SimpleGrid>
       </Flex>
-      <EvmoswapStats />
-      <EvmoswapPools />
-      <EvmoswapTokens />
-      <EvmoswapTransactions />
+      
+      <UniswapStats />
+      <UniswapPools />
+      
+{/** 
+      <UniswapTokens />
+      
+      <UniswapTransactions />
+      */}
     </>
   );
 }

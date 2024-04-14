@@ -1,20 +1,20 @@
 import Head from "next/head";
 import { AppShell } from "@mantine/core";
 import { Footer, HeaderNavbar, UnstoppableLogin } from "../components";
-import SideNavbarEvmoswap from "../components/SideNavbarUniswap";
-import EvmoswapOverview from "../components/DexSwapList/Evmoswap";
+import SideNavbarUniswap from "../components/SideNavbarUniswap";
+import UniswapOverview from "../components/DexSwapList/Uniswap";
 
-export default function Evmoswap() {
+export default function Uniswap() {
   return (
     <>
       <Head>
         <title>DataInsight - Uniswap Dashboard Analytics</title>
-        <meta name="description" content="Emvos Dex Dashboard Analytics" />
+        <meta name="description" content="Uniswap Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <AppShell
-        navbar={<SideNavbarEvmoswap />}
+        navbar={<SideNavbarUniswap />}
         header={<HeaderNavbar />}
         footer={<Footer links={[]} />}
         styles={(theme) => ({
@@ -27,7 +27,7 @@ export default function Evmoswap() {
         })}
       >
       
-        <EvmoswapOverview />
+        <UniswapOverview />
       </AppShell>
     </>
   );

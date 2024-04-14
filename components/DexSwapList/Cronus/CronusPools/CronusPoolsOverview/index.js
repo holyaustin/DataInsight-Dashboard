@@ -15,7 +15,7 @@ export default function CronusPoolsOverview() {
     ["CronusPoolsOverview"],
     async () => {
       const res = await fetch(
-        `https://api.covalenthq.com/v1/9001/xy=k/cronus/pools/?key=${APIKey}`
+        `https://api.covalenthq.com/v1/optimism-mainnet/xy=k/sushi_v2/pools/?key=${APIKey}`
       );
       return res.json();
     }

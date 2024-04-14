@@ -19,7 +19,7 @@ export default function CronusOverview() {
   // used React-Query to fetch Covalent API
   const { data, error, isFetching } = useQuery(["cronusEco"], async () => {
     const res = await fetch(
-      "https://api.coingecko.com/api/v3/coins/cronus-finance/market_chart?vs_currency=usd&days=183&interval=daily"
+      "https://api.coingecko.com/api/v3/coins/sushi/market_chart?vs_currency=usd&days=183&interval=daily"
     );
     return res.json();
   });
@@ -66,18 +66,24 @@ export default function CronusOverview() {
   return (
     <>
       <Text c="dimmed" fz="xl" tt="uppercase">
-        Cronus finance Analytics
+        Sushi Swap Analytics
       </Text>
+      
       <Flex justifyContent="space-evenly">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
           <CronusVolumeChart prices={prices} />
           <CronusLiquidityChart marketCap={marketCap} />
         </SimpleGrid>
       </Flex>
+
+     
       <CronusStats />
+        
       <CronusPools />
+   {/**  
       <CronusTokens />
       <CronusTransactions />
+       */}
     </>
   );
 }

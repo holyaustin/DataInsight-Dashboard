@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmosStatsOverview({ data }) {
+export default function UnisStatsOverview({ data }) {
   const { classes } = useStyles();
 
   const DiffIcon =
@@ -110,8 +110,8 @@ export default function EvmosStatsOverview({ data }) {
                   radius="xl"
                   src={data.image.small}
                   target="_blank"
-                  href="https://app.evmoswap.org/swap"
-                  alt="evmoswap-logo"
+                  href="https://app.uniswap.org/swap"
+                  alt="Uniswap-logo"
                 />
                 <Text fon fw={700}>
                   {data.name}
@@ -212,7 +212,7 @@ export default function EvmosStatsOverview({ data }) {
               <Button
                 radius="lg"
                 component="a"
-                href="https://app.evmoswap.org/swap"
+                href="https://app.Uniswap.org/swap"
                 variant="subtle"
                 color="violet"
                 compact

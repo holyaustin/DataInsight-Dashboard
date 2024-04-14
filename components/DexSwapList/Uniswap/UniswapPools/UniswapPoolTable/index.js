@@ -71,7 +71,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmoswapPoolTable({ data }) {
+export default function UniswapPoolTable({ data }) {
   const [scrolled, setScrolled] = useState(false);
   const { classes, cx } = useStyles();
 

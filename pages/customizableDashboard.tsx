@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Customizable Dashboard - EddAlytics</title>
+        <title>Customizable Dashboard - data-insight</title>
         <meta name="description" content="Emvos Dex Dashboard Analytics" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

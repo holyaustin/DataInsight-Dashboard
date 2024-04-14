@@ -63,7 +63,7 @@ export default function SideNavbarUniswap() {
           <Stack justify="center" spacing={10} my="auto">
             <Tooltip label="Home" position="right" transitionDuration={0}>
               <Link
-                href="/uniswap"
+                href="/optimism"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <Button

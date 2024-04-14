@@ -14,7 +14,7 @@ export default function CronusPools() {
   // used React-Query to fetch Covalent API
   const { data, error, isFetching } = useQuery(["cronusPools"], async () => {
     const res = await fetch(
-      `https://api.covalenthq.com/v1/9001/xy=k/cronus/pools/?key=${APIKey}`
+      `https://api.covalenthq.com/v1/eth-mainnet/xy=k/sushiswap_v2/pools/?key=${APIKey}`
     );
     return res.json();
   });

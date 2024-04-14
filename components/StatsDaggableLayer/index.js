@@ -4,7 +4,7 @@ import { Button } from "@mantine/core";
 import CronusStats from "../DexSwapList/Cronus/CronusStats";
 import DiffusionStats from "../DexSwapList/Diffuison/DiffusionStats";
 import EvmosStats from "../OptimismOverview/OptimismStats";
-import EvmoswapStats from "../DexSwapList/Evmoswap/EvmoswapStats";
+import EvmoswapStats from "../DexSwapList/Uniswap/UniswapStats";
 import DiffusionCharts from "../DexSwapList/Diffuison/DiffusionCharts";
 
 import { WidthProvider, Responsive } from "react-grid-layout";

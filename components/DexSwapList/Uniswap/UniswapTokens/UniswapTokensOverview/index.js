@@ -1,20 +1,20 @@
 import { Box } from "@chakra-ui/react";
-import {  Center, Notification, Text } from "@mantine/core";
-import EvmoswapTransactionsTable from "./EvmoswapTransactionsTable";
+import { Center, Notification, Text } from "@mantine/core";
+import UniswapTokensOverviewTable from "./UniswapTokensOverviewTable";
 import { IconX } from "@tabler/icons";
 import { useQuery } from "react-query";
-import LoaderComp from "../../../LoaderComp";
+import LoaderComp from "../../../../LoaderComp";
 
-//API Key
+//COVALENT API Key
 const APIKey = process.env.NEXT_PUBLIC_COVALENTKEY;
 
-export default function EvmoswapTransactions() {
+export default function UniswapTokensOverview() {
   // used React-Query to fetch Covalent API
   const { data, error, isFetching } = useQuery(
-    ["evmoswapTransactions"],
+    ["uniswapTokensOverview"],
     async () => {
       const res = await fetch(
-        `https://api.covalenthq.com/v1/9001/xy=k/evmoswap/tokens/address/0x181c262b973b22c307c646a67f64b76410d19b6b/transactions/?key=${APIKey}`
+        `https://api.covalenthq.com/v1/10/xy=k/uniswap/tokens/?key=${APIKey}`
       );
       return res.json();
     }
@@ -22,11 +22,9 @@ export default function EvmoswapTransactions() {
 
   const items = data?.data?.items;
 
-  //console.log(items.slice(0).reverse());
-
   if (isFetching)
     return (
-   <LoaderComp />
+    <LoaderComp />
     );
 
   if (error)
@@ -41,7 +39,7 @@ export default function EvmoswapTransactions() {
         }}
       >
         <Notification icon={<IconX size={18} />} color="red">
-          Error! Failed to Fetch Cronus Transactions API
+          Error! Failed to Fetch Uniswap Tokens API
         </Notification>
       </Center>
     );
@@ -49,8 +47,8 @@ export default function EvmoswapTransactions() {
   return (
     <Box>
       <Box minWidth="1220" maxW="600" justifyItems="center" mx="auto" mb={20}>
-        <Text fw={500}>Transactions</Text>
-        <EvmoswapTransactionsTable data={items} />
+        <Text fw={500}>Top Tokens</Text>
+        <UniswapTokensOverviewTable data={items} />
       </Box>
     </Box>
   );

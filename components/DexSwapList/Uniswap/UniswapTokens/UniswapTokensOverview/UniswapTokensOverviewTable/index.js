@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import {
   createStyles,
   Table,
-  Group,
   Text,
-  ThemeIcon,
-  Center,
   Paper,
   ScrollArea,
   TextInput,
+  Center
 } from "@mantine/core";
-import { IconArrowUpRight, IconArrowDownRight } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -71,97 +68,23 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function EvmoswapPoolsOverviewTable({ data }) {
+export default function UniswapTokensOverviewTable({ data }) {
   const [scrolled, setScrolled] = useState(false);
   const { classes, cx } = useStyles();
 
-  const DiffIcon =
-    data.annualized_fee > 0 ? IconArrowUpRight : IconArrowDownRight;
-
-  var numbro = require("numbro");
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   const rows = data.map((index) => (
     <tr key={index.chain_name}>
-      <td>
-        <Group>
-          {index.token_0.contract_ticker_symbol}-
-          {index.token_1.contract_ticker_symbol}
-        </Group>
-      </td>
-
-      <td>
-        {numbro(index.total_liquidity_quote).formatCurrency({
-          average: true,
-          mantissa: 2,
-          optionalMantissa: true,
-        })}
-      </td>
-      <td>
-        {numbro(index.volume_24h_quote).formatCurrency({
-          average: true,
-          mantissa: 2,
-          optionalMantissa: true,
-        })}
-      </td>
-      <td>
-        {numbro(index.volume_7d_quote).formatCurrency({
-          average: true,
-          mantissa: 2,
-          optionalMantissa: true,
-        })}
-      </td>
-      <td>
-        {numbro(index.fee_24h_quote).formatCurrency({
-          average: true,
-          mantissa: 2,
-          optionalMantissa: true,
-        })}
-      </td>
-      <td>
-        <Group spacing="2xs">
-          <Text>
-            <Text
-              color={
-                numbro(index.annualized_fee).format({
-                  thousandSeparated: true,
-                  output: "percent",
-                  spaceSeparated: true,
-                  mantissa: 2,
-                }) > 0
-                  ? "teal"
-                  : "red"
-              }
-            >
-              {numbro(index.annualized_fee).format({
-                thousandSeparated: true,
-                mantissa: 2,
-                output: "percent",
-                spaceSeparated: true,
-              })}
-            </Text>
-          </Text>
-
-          <ThemeIcon
-            color="gray"
-            variant="subtle"
-            sx={(theme) => ({
-              color:
-                numbro(index.annualized_fee).format({
-                  thousandSeparated: true,
-                  mantissa: 2,
-                  output: "percent",
-                  spaceSeparated: true,
-                }) > 0
-                  ? theme.colors.teal[6]
-                  : theme.colors.red[6],
-            })}
-            size={30}
-            radius="full"
-          >
-            <DiffIcon size={28} stroke={1.5} />
-          </ThemeIcon>
-        </Group>
-      </td>
+      <td>{index.contract_name}</td>
+      <td>{index.contract_ticker_symbol}</td>
+      <td>{formatter.format(index.total_liquidity_quote)}</td>
+      <td>{formatter.format(index.total_volume_24h_quote)}</td>
+      <td>{formatter.format(index.quote_rate)}</td>
+      <td>{index.swap_count_24h}</td>
     </tr>
   ));
 
@@ -178,7 +101,7 @@ export default function EvmoswapPoolsOverviewTable({ data }) {
               highlightOnHover
               horizontalSpacing="xl"
               verticalSpacing="xs"
-              sx={{ tableLayout: "fixed", minWidth: 700 }}
+              sx={{ minWidth: 700 }}
             >
               <thead
                 className={cx(classes.header, { [classes.scrolled]: scrolled })}
@@ -191,27 +114,27 @@ export default function EvmoswapPoolsOverviewTable({ data }) {
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Liquidity
+                      Symbol
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Volume(24h)
+                      Liquidity Quote
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Volume 7d
+                      Volume Quote (24h)
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      Fees (24h)
+                      Price
                     </Text>
                   </th>
                   <th>
                     <Text c="dimmed" fw={700} tt="uppercase">
-                      1y Fees/Liquidity
+                      Swap Count (24h)
                     </Text>
                   </th>
                 </tr>

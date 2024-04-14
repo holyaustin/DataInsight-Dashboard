@@ -9,8 +9,8 @@ import {
   Button,
 } from "@mantine/core";
 import {
-  Area,
-  AreaChart,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
@@ -42,8 +42,7 @@ const useStyles = createStyles((theme) => ({
     extalign: "center",
   },
 }));
-
-export default function EvmoswapVolumeChart({ prices }) {
+export default function UniswapLiquidityChart({ marketCap }) {
   const { classes } = useStyles();
   var numbro = require("numbro");
 
@@ -59,7 +58,7 @@ export default function EvmoswapVolumeChart({ prices }) {
           className={classes.Paper}
         >
           <Flex justify="center" align="center" direction="row">
-            <Text fw="bold">Price Chart</Text>
+            <Text fw="bold">Market Cap Chart</Text>
           </Flex>
           <Flex
             mih={30}
@@ -73,14 +72,14 @@ export default function EvmoswapVolumeChart({ prices }) {
             </Button>
           </Flex>
           <ResponsiveContainer width="100%" height={250}>
-            <AreaChart data={prices}>
+            <BarChart data={marketCap}>
               <defs>
                 <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#4C6793" stopOpacity={0.4} />
                   <stop offset="75%" stopColor="#4C6793" stopOpacity={0.05} />
                 </linearGradient>
               </defs>
-              <Area dataKey="Price" stroke="#4C6793" fill="url(#color)" />
+              <Bar dataKey="MarketCap" stroke="#4C6793" fill="url(#color)" />
               <XAxis axisLine={false} tickLine={false} dataKey="X" />
               <YAxis
                 axisLine={false}
@@ -94,9 +93,10 @@ export default function EvmoswapVolumeChart({ prices }) {
                   })
                 }
               />
+
               <Tooltip content={<CustomTooltip />} />
               <CartesianGrid opacity={0.1} vertical={false} />
-            </AreaChart>
+            </BarChart>
           </ResponsiveContainer>
         </Paper>
       </Container>
